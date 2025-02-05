@@ -1,0 +1,9 @@
+services:
+  spotdl:
+    build: .
+    container_name: spotdl_container
+    volumes:
+      - ./downloads:/app/downloads  # Persist downloads inside project directory
+    stdin_open: true
+    tty: true
+    command: python /app/download.py
